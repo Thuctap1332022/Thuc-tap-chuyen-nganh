@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="QLTV.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>BizBox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 288px;
+        }
+        .auto-style2 {
+            width: 787px;
+            height: 403px;
+        }
+        .auto-style3 {
+            width: 730px;
+            height: 133px;
+        }
+    </style>
+</head>
+<body>
+<div id="header" class="auto-style3">
+  <h1 class="auto-style1">QLTV-6</h1>
+</div>
+<div id="content" class="auto-style2">
+  <div id="colOne">
+    <div id="menu1">
+      <ul>
+        <li id="menu-01"><a href="Home.aspx">Home</a></li>
+        <li id="menu-02"><a href="NhanVien.aspx">Nhân viên</a></li>
+        <li id="menu-03"><a href="SinhVien.aspx">Sinh viên</a></li>
+        <li id="menu-04"><a href="Sach.aspx">Sách</a></li>
+        <li id="menu-05"><a href="TacGia.aspx">Tác giả</a></li>
+        <li id="menu-06"><a href="NXB.aspx">Nhà xuất bản</a></li>
+        <li id="menu-07"><a href="TheLoai.aspx">Thể loại</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="colTwo">
+      <asp:ContentPlaceHolder ID="NoiDung" runat="server"></asp:ContentPlaceHolder>
+  </div>
+  <div style="clear: both;">&nbsp;</div>
+</div>
+<div id="footer">
+  <p>Quản lý thư viện</p>
+</div>
+</body>
+</html>
+
+
