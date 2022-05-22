@@ -28,6 +28,20 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLTV_ThucTapConnectionString %>" SelectCommand="SELECT * FROM [TACGIA]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLTV_ThucTapConnectionString %>" SelectCommand="SELECT * FROM [TACGIA]" DeleteCommand="DELETE FROM [TACGIA] WHERE [maTG] = @maTG" InsertCommand="INSERT INTO [TACGIA] ([maTG], [tenTG], [ghiChu]) VALUES (@maTG, @tenTG, @ghiChu)" UpdateCommand="UPDATE [TACGIA] SET [tenTG] = @tenTG, [ghiChu] = @ghiChu WHERE [maTG] = @maTG">
+            <DeleteParameters>
+                <asp:Parameter Name="maTG" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="maTG" Type="Int32" />
+                <asp:Parameter Name="tenTG" Type="String" />
+                <asp:Parameter Name="ghiChu" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="tenTG" Type="String" />
+                <asp:Parameter Name="ghiChu" Type="String" />
+                <asp:Parameter Name="maTG" Type="Int32" />
+            </UpdateParameters>
+          </asp:SqlDataSource>
     </form>
 </asp:Content>

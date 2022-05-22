@@ -31,6 +31,26 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLTV_ThucTapConnectionString %>" SelectCommand="SELECT * FROM [NHAXUATBAN]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLTV_ThucTapConnectionString %>" SelectCommand="SELECT * FROM [NHAXUATBAN]" DeleteCommand="DELETE FROM [NHAXUATBAN] WHERE [maNXB] = @maNXB" InsertCommand="INSERT INTO [NHAXUATBAN] ([maNXB], [tenNXB], [ghiChu], [diaChiNXB], [dienThoaiNXB], [websiteNXB]) VALUES (@maNXB, @tenNXB, @ghiChu, @diaChiNXB, @dienThoaiNXB, @websiteNXB)" UpdateCommand="UPDATE [NHAXUATBAN] SET [tenNXB] = @tenNXB, [ghiChu] = @ghiChu, [diaChiNXB] = @diaChiNXB, [dienThoaiNXB] = @dienThoaiNXB, [websiteNXB] = @websiteNXB WHERE [maNXB] = @maNXB">
+            <DeleteParameters>
+                <asp:Parameter Name="maNXB" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="maNXB" Type="Int32" />
+                <asp:Parameter Name="tenNXB" Type="String" />
+                <asp:Parameter Name="ghiChu" Type="String" />
+                <asp:Parameter Name="diaChiNXB" Type="String" />
+                <asp:Parameter Name="dienThoaiNXB" Type="String" />
+                <asp:Parameter Name="websiteNXB" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="tenNXB" Type="String" />
+                <asp:Parameter Name="ghiChu" Type="String" />
+                <asp:Parameter Name="diaChiNXB" Type="String" />
+                <asp:Parameter Name="dienThoaiNXB" Type="String" />
+                <asp:Parameter Name="websiteNXB" Type="String" />
+                <asp:Parameter Name="maNXB" Type="Int32" />
+            </UpdateParameters>
+           </asp:SqlDataSource>
     </form>
 </asp:Content>

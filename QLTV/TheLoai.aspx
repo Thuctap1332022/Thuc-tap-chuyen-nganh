@@ -28,7 +28,24 @@
         <SortedDescendingCellStyle BackColor="#E5E5E5" />
         <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLTV_ThucTapConnectionString %>" SelectCommand="SELECT * FROM [THELOAI]"></asp:SqlDataSource>
-    </form>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLTV_ThucTapConnectionString %>"
+            SelectCommand="SELECT * FROM [THELOAI]"
+            DeleteCommand="DELETE FROM [THELOAI] WHERE [maTL] = @maTL" InsertCommand="INSERT INTO [THELOAI] ([maTL], [tenTL], [ghiChu]) VALUES (@maTL, @tenTL, @ghiChu)" UpdateCommand="UPDATE [THELOAI] SET [tenTL] = @tenTL, [ghiChu] = @ghiChu WHERE [maTL] = @maTL">
+         <DeleteParameters>
+                <asp:Parameter Name="maTL" Type="Int32" />
+         </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="maTL" Type="Int32" />
+                <asp:Parameter Name="tenTL" Type="String" />
+                <asp:Parameter Name="ghiChu" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="tenTL" Type="String" />
+                <asp:Parameter Name="ghiChu" Type="String" />
+                <asp:Parameter Name="maTL" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        
+        </form>
       
 </asp:Content>
