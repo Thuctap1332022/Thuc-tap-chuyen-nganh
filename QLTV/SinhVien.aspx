@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="SinhVien.aspx.cs" Inherits="QLTV.SinhVien" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="NoiDung" runat="server">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="width: 715px">
 
     <h1 class="auto-style1">Quản lý sinh viên <a href="AddSV.aspx">+</a> </h1>
 
@@ -13,7 +13,12 @@
             <asp:BoundField DataField="lopSV" HeaderText="Lớp" SortExpression="lopSV" />
             <asp:BoundField DataField="ngayLamThe" HeaderText="Ngày làm thẻ" SortExpression="ngayLamThe" />
             <asp:BoundField DataField="NgayHetHan" HeaderText="Ngày hết hạn" SortExpression="NgayHetHan" />
-            <asp:TemplateField ShowHeader="False">
+            <asp:TemplateField HeaderText="Ảnh">
+                <ItemTemplate>
+                    <asp:Image ID="imgs" runat="server" ImageUrl='<%#Eval("anhSV") %>'  Height="80px" Width="60px" />
+                </ItemTemplate>
+            </asp:TemplateField>
+              <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>
                         <asp:Button ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"
                             OnClientClick="return confirm ('Bạn có chắc muốn xoá không?')"></asp:Button>
@@ -34,7 +39,7 @@
         <SortedDescendingCellStyle BackColor="#E5E5E5" />
         <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLTV_ThucTapConnectionString %>" DeleteCommand="DELETE FROM [SINHVIEN] WHERE [maSV] = @maSV" InsertCommand="INSERT INTO [SINHVIEN] ([maSV], [hotenSV], [gioitinhSV], [ngaySinhSV], [lopSV], [ngayLamThe], [NgayHetHan]) VALUES (@maSV, @hotenSV, @gioitinhSV, @ngaySinhSV, @lopSV, @ngayLamThe, @NgayHetHan)" SelectCommand="SELECT * FROM [SINHVIEN]" UpdateCommand="UPDATE [SINHVIEN] SET [hotenSV] = @hotenSV, [gioitinhSV] = @gioitinhSV, [ngaySinhSV] = @ngaySinhSV, [lopSV] = @lopSV, [ngayLamThe] = @ngayLamThe, [NgayHetHan] = @NgayHetHan WHERE [maSV] = @maSV">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLTV_ThucTapConnectionString %>" DeleteCommand="DELETE FROM [SINHVIEN] WHERE [maSV] = @maSV" InsertCommand="INSERT INTO [SINHVIEN] ([maSV], [hotenSV], [gioitinhSV], [ngaySinhSV], [lopSV], [ngayLamThe], [NgayHetHan], [anhSV]) VALUES (@maSV, @hotenSV, @gioitinhSV, @ngaySinhSV, @lopSV, @ngayLamThe, @NgayHetHan, @anhSV)" SelectCommand="SELECT * FROM [SINHVIEN]" UpdateCommand="UPDATE [SINHVIEN] SET [hotenSV] = @hotenSV, [gioitinhSV] = @gioitinhSV, [ngaySinhSV] = @ngaySinhSV, [lopSV] = @lopSV, [ngayLamThe] = @ngayLamThe, [NgayHetHan] = @NgayHetHan, [anhSV] = @anhSV WHERE [maSV] = @maSV">
             <DeleteParameters>
                 <asp:Parameter Name="maSV" Type="Int32" />
             </DeleteParameters>
@@ -46,6 +51,7 @@
                 <asp:Parameter Name="lopSV" Type="String" />
                 <asp:Parameter Name="ngayLamThe" Type="DateTime" />
                 <asp:Parameter Name="NgayHetHan" Type="DateTime" />
+                <asp:Parameter Name="anhSV" Type="String" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="hotenSV" Type="String" />
@@ -54,6 +60,7 @@
                 <asp:Parameter Name="lopSV" Type="String" />
                 <asp:Parameter Name="ngayLamThe" Type="DateTime" />
                 <asp:Parameter Name="NgayHetHan" Type="DateTime" />
+                <asp:Parameter Name="anhSV" Type="String" />
                 <asp:Parameter Name="maSV" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>

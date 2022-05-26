@@ -11,7 +11,8 @@ namespace QLTV
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["userName"] == null)
+                Response.Redirect("Login.aspx");
         }
     }
 }

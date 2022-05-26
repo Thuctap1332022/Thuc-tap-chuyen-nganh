@@ -13,5 +13,13 @@ namespace QLTV
         {
 
         }
+
+        protected void FormView1_ItemInserting(object sender, FormViewInsertEventArgs e)
+        {
+            FileUpload f = (FileUpload)FormView1.FindControl("FileUpload1");
+            string path = Server.MapPath("~/images/");
+            f.PostedFile.SaveAs(path + f.FileName);
+            SqlDataSource1.InsertParameters["anhMinhHoa"].DefaultValue = "images/" + f.FileName;
+        }
     }
 }

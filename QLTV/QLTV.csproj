@@ -81,6 +81,12 @@
     <Content Include="EditTG.aspx" />
     <Content Include="EditTL.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="images\a1.jpg" />
+    <Content Include="images\a2.jpg" />
+    <Content Include="images\a3.jpg" />
+    <Content Include="images\a4.jpg" />
+    <Content Include="images\a5.jpg" />
+    <Content Include="Login.aspx" />
     <Content Include="NhanVien.aspx" />
     <Content Include="NXB.aspx" />
     <Content Include="Sach.aspx" />
@@ -180,6 +186,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="NhanVien.aspx.cs">
       <DependentUpon>NhanVien.aspx</DependentUpon>

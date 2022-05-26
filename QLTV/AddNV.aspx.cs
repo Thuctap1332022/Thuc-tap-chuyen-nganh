@@ -14,19 +14,12 @@ namespace QLTV
 
         }
 
-        protected void diachiNVTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void FormView1_ItemInserting(object sender, FormViewInsertEventArgs e)
         {
-
-        }
-
-        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
+            FileUpload f = (FileUpload)FormView1.FindControl("FileUpload1");
+            string path = Server.MapPath("~/images/");
+            f.PostedFile.SaveAs(path + f.FileName);
+            SqlDataSource1.InsertParameters["anhNV"].DefaultValue = "images/" + f.FileName;
         }
     }
 }

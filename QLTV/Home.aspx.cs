@@ -11,7 +11,12 @@ namespace QLTV
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblUserDetail.Text = "Xin chào " + Session["userName"];
+        }
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
     }
 }

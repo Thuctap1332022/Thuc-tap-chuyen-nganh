@@ -18,11 +18,16 @@
             width: 730px;
             height: 133px;
         }
+        .auto-style4 {
+            height: 76px;
+            width: 144px;
+            margin-left: 841px;
+        }
     </style>
 </head>
 <body>
 <div id="header" class="auto-style3">
-  <h1 class="auto-style1">Quản lý thư viện</h1>
+  <h1 class="auto-style1">Quản lý thư viện</h1>            
 </div>
 <div id="content" class="auto-style2">
   <div id="colOne">

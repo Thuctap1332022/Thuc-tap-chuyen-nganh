@@ -22,6 +22,7 @@ Create table [SINHVIEN] (
 	[lopSV] Char(20) NULL,
 	[ngayLamThe] Datetime NULL,
 	[NgayHetHan] Datetime NULL,
+	[anhSV] Nvarchar(50) NULL,
 Primary Key  ([maSV])
 ) 
 go
@@ -33,6 +34,8 @@ Create table [NHANVIEN] (
 	[diachiNV] Nvarchar(100) NULL,
 	[ngayVaoLam] Datetime NULL,
 	[sdtNV] Varchar(50) NULL,
+	[anhNV] Nvarchar(50) NULL,
+	[userName] Varchar(50) NULL,
 	[matKhau] Nvarchar(50) NULL,
 Primary Key  ([maNV])
 ) 
@@ -44,6 +47,7 @@ Create table [SACH] (
 	[maTG] Integer NOT NULL,
 	[maNXB] Integer NOT NULL,
 	[tenSach] Nvarchar(50) NULL,
+	[anhMinhHoa] Nvarchar(50) NULL,
 	[gia] Float NULL,
 	[soLuong] Integer NULL,
 	[soLuongTon] Integer NULL,
@@ -82,7 +86,7 @@ Create table [PHIEUMUON] (
 	[maPhieu] Integer NOT NULL,
 	[maNV] Integer NOT NULL,
 	[maSV] Integer NOT NULL,
-	[NgayMuon] Datetime NULL,
+	[NgayMuon] Date NULL,
 Primary Key  ([maPhieu])
 ) 
 go
@@ -91,7 +95,7 @@ Create table [TRASACH] (
 	[maPhieu] Integer NOT NULL,
 	[maNV] Integer NOT NULL,
 	[maSach] Integer NOT NULL,
-	[ngayTra] Datetime NULL,
+	[ngayTra] Date NULL,
 	[tenSach] Nvarchar(50) NULL,
 	[tinhTrang] Nvarchar(50) NULL,
 Primary Key  ([maPhieu])
@@ -101,8 +105,8 @@ go
 Create table [CT_PHIEUMUON] (
 	[maPhieu] Integer NOT NULL,
 	[maSach] Integer NOT NULL,
-	[ngayTra] Datetime NULL,
-	[ngayMuon] Datetime NULL,
+	[ngayTra] Date NULL,
+	[ngayMuon] Date NULL,
 	[soLuong] Integer NULL,
 	[tinhTrang] Nvarchar(10) NULL,
 Primary Key  ([maPhieu],[maSach])
@@ -136,9 +140,13 @@ go
 Set quoted_identifier off
 go
 
-insert into NHANVIEN values (1,N'Nam',2001/2/3,N'Hà Nội',2020/2/3,123456789,123456789)
-insert into NHANVIEN values (2,N'Nữ',2001/2/3,N'Hà Nội',2020/2/3,123456789,123456789)
-insert into NHANVIEN values (3,N'Nam',2001/2/3,N'Hà Nội',2020/2/3,123456789,123456789)
+insert into SINHVIEN values (1,N'Nguyễn Văn A',N'Nam',2001/2/3,N'CNTT1',2020/2/3,2024/2/3,'images/a1.jpg')
+insert into SINHVIEN values (2,N'Nguyễn Văn B',N'Nam',2001/2/3,N'CNTT1',2020/2/3,2024/2/3,'images/a1.jpg')
+insert into SINHVIEN values (3,N'Nguyễn Thị C',N'Nữ',2001/2/3,N'CNTT1',2020/2/3,2024/2/3,'images/a1.jpg')
+
+insert into NHANVIEN values (1,N'Nam',2001/2/3,N'Hà Nội',2020/2/3,123456789,'images/a1.jpg','user1','user1')
+insert into NHANVIEN values (2,N'Nữ',2001/2/3,N'Hà Nội',2020/2/3,123456789,'images/a1.jpg','user2','user2')
+insert into NHANVIEN values (3,N'Nam',2001/2/3,N'Hà Nội',2020/2/3,123456789,'images/a1.jpg','user3',123456789)
 
 insert into NHAXUATBAN values (1,N'NXB Giáo dục','',N'Hà Nội',123456789,N'NXBGD.VN')
 insert into NHAXUATBAN values (2,N'NXB Hoa Hồng','',N'Hà Nội',123456789,N'NXBGD.VN')
@@ -152,12 +160,13 @@ insert into THELOAI values (1,N'Giáo dục',N'')
 insert into THELOAI values (2,N'Khoa học',N'')
 insert into THELOAI values (3,N'Văn học',N'')
 
-insert into SACH values (1,1,1,1,N'Toán',25000,20,25)
-insert into SACH values (2,2,1,3,N'Toán',25000,20,25)
-insert into SACH values (3,1,1,1,N'Toán',25000,20,25)
+insert into SACH values (1,1,1,1,N'Toán','images/a1.jpg',25000,20,25)
+insert into SACH values (2,2,1,3,N'Toán','images/a1.jpg',25000,20,25)
+insert into SACH values (3,1,1,1,N'Toán','images/a1.jpg',25000,20,25)
 
-insert into SINHVIEN values (1,N'Nguyễn Văn A',N'Nam',2001/2/3,N'CNTT1',2020/2/3,2024/2/3)
-insert into SINHVIEN values (2,N'Nguyễn Văn B',N'Nam',2001/2/3,N'CNTT1',2020/2/3,2024/2/3)
-insert into SINHVIEN values (3,N'Nguyễn Thị C',N'Nữ',2001/2/3,N'CNTT1',2020/2/3,2024/2/3)
+select *from NHANVIEN
+
+
+
 
 
