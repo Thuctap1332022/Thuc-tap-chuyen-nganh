@@ -35,6 +35,7 @@
     <form id="form1" runat="server">
         <div class="wrapper1">
             <div class="logincontainer">
+                <h1>Login</h1>
                 <asp:TextBox runat="server" ID="txtUserName" placeholder="Enter userID" CssClass="form-control" />
                 <br />
                 <asp:TextBox runat="server" ID="txtPassword" placeholder="Enter pass" TextMode="Password" CssClass="form-control" />
