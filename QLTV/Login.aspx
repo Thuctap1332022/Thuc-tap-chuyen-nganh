@@ -15,7 +15,7 @@
             justify-content:center;
             width:100% !important;
             padding:20px;
-            background-color:#f5f5f5 !important;
+            background-color:#83d684 !important;
         }
 
         .logincontainer
@@ -26,7 +26,7 @@
             max-width:450px;
             position:relative;
             padding:20px;
-            border:1px white solid;
+            border:1px black solid;
             box-shadow:0 15px 10px -10px #acacac;
         }
     </style>

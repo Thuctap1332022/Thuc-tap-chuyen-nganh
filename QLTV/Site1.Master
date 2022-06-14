@@ -27,7 +27,8 @@
 </head>
 <body>
 <div id="header" class="auto-style3">
-  <h1 class="auto-style1">Quản lý thư viện</h1>            
+  <h1 class="auto-style1">Quản lý thư viện</h1>
+    <h2><asp:Label ID="lblUserDetail" runat="server" Text=""></asp:Label></h2>
 </div>
 <div id="content" class="auto-style2">
   <div id="colOne">

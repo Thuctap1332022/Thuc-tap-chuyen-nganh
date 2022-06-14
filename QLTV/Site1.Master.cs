@@ -11,6 +11,7 @@ namespace QLTV
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblUserDetail.Text = "Xin chào " + Session["userName"];
             if (Session["userName"] == null)
                 Response.Redirect("Login.aspx");
         }
